@@ -2,6 +2,7 @@
 <html>
 <head>
 
+    <link type="text/css" rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" media="all">
     <link type="text/css" rel="stylesheet" href="main.css" media="all">
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -13,42 +14,30 @@
 
 
 
-<div class="upload_form_cont">
-    <form id="upload_form" enctype="multipart/form-data" method="post" action="upload.php">
-        <div>
-    <div><label for="image_file">Please select image file</label></div>
-    <div><input type="file" class="image_file" name="image_file" id="image_file" /></div>
-    </div>
+<div class="upload_form_cont container">
+    <form id="upload_form" class="mt20 mb20" enctype="multipart/form-data" method="post" action="upload.php">
 
-    <div>
-    <input type="button" value="Upload" id = "startUploading" />
-    </div>
-    <div id="fileinfo">
-        <div id="filename"></div>
-        <div id="filesize"></div>
-        <div id="filetype"></div>
-        <div id="filedim"></div>
-    </div>
-    <div id="error" style="display:none;">You should select valid image files only!</div>
-    <div id="error2" style="display:none;">An error occurred while uploading the file</div>
-
-    <div id="abort" style="display:none;">The upload has been canceled by the user or the browser dropped the connection</div>
-    <div id="warnsize" style="display:none;">Your file is very big. We can't accept it. Please select more small file</div>
-
-    <div id="progress_info">
-        <div id="progress"></div>
-        <div id="progress_percent">&nbsp;</div>
-        <div class="clear_both"></div>
-        <div>
-        <div id="speed">&nbsp;</div>
-        <div id="remaining">&nbsp;</div>
-        <div id="b_transfered">&nbsp;</div>
-        <div class="clear_both"></div>
+        <div class="form-group">
+            <label for="image_file" class="btn btn-primary">Please select image file</label>
+            <input type="file" class="image_file" name="image_file" id="image_file" />
         </div>
-        <div id="upload_response" style="display:none;"></div>
-    </div>
+
+
+        <div id="fileinfo" class="alert alert-success hidden"></div>
+        <div id="error" class="hidden alert alert-danger"></div>
+        <div id="status" class="alert alert-warning hidden"></div>
+
+        <div class="form-group">
+            <input type="button" value="Upload" id = "startUploading" class="btn btn-default" />
+        </div>
+
+        <div class="form-group">
+            <img id="preview" />
+        </div>
+
     </form>
-    <img id="preview" />
+
+
 </div>
 
 
